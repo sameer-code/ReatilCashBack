@@ -1,9 +1,8 @@
-import React, { createContext, useContext, useState } from "react";
+// src/context/NavbarContext.jsx
+import React, { createContext, useContext, useState } from 'react';
 
-// Create the context
 const NavbarContext = createContext();
 
-// Provider component
 export const NavbarProvider = ({ children }) => {
   const [menuOpen, setMenuOpen] = useState(false);
 
@@ -14,5 +13,4 @@ export const NavbarProvider = ({ children }) => {
   );
 };
 
-// Custom hook for easy access
 export const useNavbar = () => useContext(NavbarContext);
