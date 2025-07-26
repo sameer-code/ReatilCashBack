@@ -1,4 +1,3 @@
-// src/components/Navbar.jsx
 import React from "react";
 import { Link } from "react-router-dom";
 import { useNavbar } from "../context/NavbarContext";
@@ -8,7 +7,7 @@ const Navbar = () => {
   const { menuOpen, setMenuOpen } = useNavbar();
 
   return (
-    <nav className="bg-green-600 text-white shadow">
+    <nav className="bg-green-600 text-white shadow-md">
       <div className="max-w-6xl mx-auto px-4 flex items-center justify-between h-16">
         <Link to="/" className="text-2xl font-bold">RetailCB</Link>
 
@@ -25,10 +24,12 @@ const Navbar = () => {
           </div>
         </div>
 
-        {/* Mobile Hamburger */}
-        <button onClick={() => setMenuOpen(!menuOpen)} className="md:hidden">
-          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2}
-            viewBox="0 0 24 24">
+        {/* Mobile Hamburger Icon */}
+        <button
+          onClick={() => setMenuOpen(!menuOpen)}
+          className="md:hidden focus:outline-none"
+        >
+          <svg className="w-6 h-6" fill="none" stroke="currentColor" strokeWidth={2} viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round"
               d={menuOpen ? "M6 18L18 6M6 6l12 12" : "M4 6h16M4 12h16M4 18h16"} />
           </svg>
@@ -46,7 +47,6 @@ const Navbar = () => {
           >
             <Link to="/" className="block hover:underline">Home</Link>
             <Link to="/wallet" className="block hover:underline">Wallet</Link>
-
             <div className="space-y-1">
               <p className="font-semibold">More</p>
               <Link to="/about" className="block text-sm pl-4 hover:underline">About</Link>
