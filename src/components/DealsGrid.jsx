@@ -1,18 +1,26 @@
-export default function DealsGrid() {
-  return (
-    <div className="p-4">
-      <h3 className="text-lg font-semibold mb-2">Popular Deals</h3>
-      <div className="grid grid-cols-2 gap-4">
-        {Array(6).fill().map((_, i) => (
-          <div key={i} className="bg-white shadow-md p-2 rounded">
-            <span className="bg-yellow-400 text-xs px-2 py-1 rounded-full text-white">
-              FEATURED
-            </span>
-            <div className="h-20 bg-gray-100 my-2" />
-            <p className="text-sm font-semibold">$10</p>
-          </div>
-        ))}
-      </div>
+const deals = [
+  {
+    title: "Amazon - 10% Cashback",
+    price: "Upto ₹500",
+    link: "https://www.amazon.in/",
+  },
+  {
+    title: "Myntra Sale - Flat ₹300 Cashback",
+    price: "Min. Order ₹999",
+    link: "https://www.myntra.com/",
+  },
+  {
+    title: "Ajio Flat 15% OFF",
+    price: "With Cashback",
+    link: "https://www.ajio.com/",
+  },
+];
+
+{deals.map((deal, index) => (
+  <a href={deal.link} target="_blank" rel="noopener noreferrer" key={index}>
+    <div className="bg-white p-4 rounded shadow hover:shadow-md hover:scale-105 transition">
+      <h3 className="text-lg font-semibold">{deal.title}</h3>
+      <p className="text-green-600">{deal.price}</p>
     </div>
-  );
-}
+  </a>
+))}
