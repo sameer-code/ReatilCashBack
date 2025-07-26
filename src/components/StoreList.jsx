@@ -1,23 +1,50 @@
-const stores = [
-  "ayro.png", "kappa.png", "scott.png", "macys.png",
-  "oldnavy.png", "hm.png", "levis.png", "adidas.png"
+import React from "react";
+
+const storeData = [
+  {
+    name: "Amazon",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/a/a9/Amazon_logo.svg",
+  },
+  {
+    name: "Flipkart",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0b/Flipkart_logo.png",
+  },
+  {
+    name: "Myntra",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/7/76/Myntra_Logo.png",
+  },
+  {
+    name: "Ajio",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/6/66/AJIO_Logo.png",
+  },
+  {
+    name: "Snapdeal",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/0c/Snapdeal_Logo.png",
+  },
+  {
+    name: "Tata Cliq",
+    logo: "https://upload.wikimedia.org/wikipedia/commons/0/04/Tata_Cliq_Logo.png",
+  },
 ];
 
-export default function StoreList() {
+const StoreList = () => {
   return (
-    <div className="p-4">
-      <h3 className="text-lg font-semibold mb-4">Popular Stores</h3>
-      <div className="grid grid-cols-4 gap-4">
-        {stores.map((store, i) => (
-          <div key={i} className="bg-white shadow rounded p-2">
+    <div className="p-4 text-center">
+      <h2 className="text-xl font-bold mb-4">Popular Stores</h2>
+      <div className="flex flex-wrap justify-center gap-6">
+        {storeData.map((store, index) => (
+          <div key={index} className="flex flex-col items-center">
             <img
-              src={`/assets/${store}`}
-              alt="store"
-              className="w-full h-10 object-contain"
+              src={store.logo}
+              alt={store.name}
+              className="w-24 h-16 object-contain mb-2"
             />
+            <p className="text-sm">{store.name}</p>
           </div>
         ))}
       </div>
     </div>
   );
-}
+};
+
+export default StoreList;
