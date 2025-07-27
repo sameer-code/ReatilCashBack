@@ -20,17 +20,18 @@ const deals = [
 
 const DealsGrid = () => {
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 p-4">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 p-4">
       {deals.map((deal, index) => (
         <a
           href={deal.link}
           target="_blank"
           rel="noopener noreferrer"
           key={index}
+          className="block"
         >
-          <div className="bg-white p-4 rounded shadow hover:shadow-md hover:scale-105 transition duration-300">
-            <h3 className="text-lg font-semibold mb-1">{deal.title}</h3>
-            <p className="text-green-600">{deal.price}</p>
+          <div className="bg-white border border-gray-200 p-5 rounded-xl shadow hover:shadow-lg hover:scale-[1.03] transition-all duration-300 ease-in-out">
+            <h3 className="text-lg font-semibold text-gray-800 mb-1">{deal.title}</h3>
+            <p className="text-green-600 font-medium">{deal.price}</p>
           </div>
         </a>
       ))}
